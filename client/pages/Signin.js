@@ -51,89 +51,75 @@ export default function Signin(props) {
 
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-md w-full space-y-8">
-        <div>
+    
+    <>
+    
 
-          <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">Sign in to your account</h2>
-          <p className="mt-2 text-center text-sm text-gray-600">
-            Don't have an account ? {' '}
-            <Link to="#" className="font-medium text-indigo-600 hover:text-indigo-500">
-              Register
-            </Link>
-          </p>
+   
+     <section class="flex flex-col md:flex-row h-screen items-center">
+        <div class="bg-indigo-600 items-stretch hidden lg:block w-full  h-screen">
+          <img
+            src="https://img2.pngdownload.id/20180404/raq/kisspng-star-blue-desktop-wallpaper-drawing-white-white-stars-5ac4f6597195f8.6409907315228575614653.jpg"
+            alt=""
+            class="h-100v" style={{width: "100%"}}
+          />
+        
+
+        <div class="bg-white w-full absolute bg-opacity-0 top-20 right-10  md:w-1/2 xl:px-28 z-10">
+          <div class="w-full h-full ">
+            <h1 class="text-xl md:text-2xl  text-blue-500 font-bold leading-tight ">
+              Log in to your account
+            </h1>
+
+            <form method="POST" action="#" class="mt-6" onSubmit={onSubmit}>
+              <div>
+                <label class="block text-black">Email Address</label>
+                <input onChange={handleOnChange("username")}
+                  type="name"
+                  name="user_name"
+                  id="user_name"
+                  placeholder="Enter User Name "
+                  class="w-full px-4 py-3 bg-opacity-90 rounded-lg bg-gray-200 mt-2 border focus:border-blue-500 focus:bg-white focus:outline-none"
+                  autofocus
+                  autocomplete
+                  required
+                />
+              </div>
+
+              <div class="mt-4">
+                <label class="block text-black">Password</label>
+                <input onChange={handleOnChange("password")}
+                  type="password"
+                  name="user_password"
+                  id="user_password"
+                  placeholder="Enter Password"
+                  minlength="6"
+                  class="w-full px-4 py-3 bg-opacity-90 rounded-lg bg-gray-200 mt-2 border focus:border-blue-500
+                focus:bg-white focus:outline-none"
+                  required
+                />
+              </div>
+
+              
+
+              <button
+                type="submit"
+                class="w-full block bg-indigo-500 hover:bg-indigo-400 focus:bg-indigo-400 text-white font-semibold rounded-lg
+              px-4 py-3 mt-6"
+              >
+                Log In
+              </button>
+            </form>
+
+            <p class="mt-8 text-black">
+             <Link to="/talent/register/">
+             Create Account Here!
+             </Link>
+            </p>
+          </div>
         </div>
-        {values.error &&
-          <p class="text-red text-lg italic">{values.error}</p>}
-        <form className="mt-8 space-y-6" action="#" method="POST">
-          <input type="hidden" name="remember" defaultValue="true" />
-          <div className="rounded-md shadow-sm -space-y-px">
-            <div>
-              <label htmlFor="email-address" className="sr-only">
-                Username
-              </label>
-              <input
-                id="username"
-                name="username"
-                type="text"
-                autoComplete="username"
-                onChange={handleOnChange('username')}
-                required
-                className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                placeholder="username"
-              />
-            </div>
-            <div>
-              <label htmlFor="password" className="sr-only">
-                Password
-              </label>
-              <input
-                id="password"
-                name="password"
-                type="password"
-                autoComplete="current-password"
-                onChange={handleOnChange('password')}
-                required
-                className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                placeholder="Password"
-              />
-            </div>
-          </div>
-
-          <div className="flex items-center justify-between">
-            <div className="flex items-center">
-              <input
-                id="remember_me"
-                name="remember_me"
-                type="checkbox"
-                className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
-              />
-              <label htmlFor="remember_me" className="ml-2 block text-sm text-gray-900">
-                Remember me
-              </label>
-            </div>
-
-            <div className="text-sm">
-              <a href="#" className="font-medium text-indigo-600 hover:text-indigo-500">
-                Forgot your password?
-              </a>
-            </div>
-          </div>
-
-          <div>
-            <button
-              type="submit"
-              onClick={onSubmit}
-              className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-            >
-              <span className="absolute left-0 inset-y-0 flex items-center pl-3">
-                <LockClosedIcon className="h-5 w-5 text-indigo-500 group-hover:text-indigo-400" aria-hidden="true" />
-              </span>
-              Sign in
-            </button>
-          </div>
-        </form>
-      </div>
-    </div>
-  )
+        </div>
+      </section>
+    
+    </> )
 }
